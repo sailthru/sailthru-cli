@@ -1,7 +1,7 @@
 {
     "name": "sailthru-cli",
     "description": "Command Line Interface for Sailthru API",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": {
         "name": "Prajwal Tuladhar",
         "email": "praj@infynyxx.com",
@@ -17,7 +17,8 @@
     },
     "dependencies": {
         "commander": ">=0.2.0",
-        "colors": ">=0.6.0-1"
+        "colors": ">=0.6.0-1",
+        "sailthru-client": ">=1.0.4"
     },
     "engines": {
         "node": ">=0.4"
