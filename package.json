@@ -1,6 +1,7 @@
 {
     "name": "sailthru-cli",
     "description": "Command Line Interface for Sailthru API",
+    "version": "0.0.1",
     "author": {
         "name": "Prajwal Tuladhar",
         "email": "praj@infynyxx.com",
