@@ -18,6 +18,8 @@ exports.main = ->
     options = {}
 
     options = parseConfigFile commander.config if commander.config
+
+    process.exit 0 if options is false
     
     options.apiKey = commander.key if commander.key
     options.apiSecret = commander.secret if commander.secret

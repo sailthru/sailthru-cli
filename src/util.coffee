@@ -14,13 +14,12 @@ exports.parseConfigFile = (file) ->
             json = JSON.parse fileBuffer.toString()
             return json
         catch jsonErr
+            log jsonErr.toString().red
             msg = "Error parsing JSON file"
             log msg.red
-            process.exit 0
     catch err
         msg = JSON.stringify(err)
         log msg.red
-        process.exit 0
-    return
+    return false
 
 exports.log = log
