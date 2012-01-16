@@ -14,6 +14,8 @@ Installation
 ------------
     npm install sailthru-cli -g
 
+If node is not installed, install it from [http://nodejs.org](http://nodejs.org/)
+
 Usage
 ------
 
