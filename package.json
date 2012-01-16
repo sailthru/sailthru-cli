@@ -1,13 +1,16 @@
 {
     "name": "sailthru-cli",
     "description": "Command Line Interface for Sailthru API",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": {
         "name": "Prajwal Tuladhar",
         "email": "praj@infynyxx.com",
         "url": "http://infynyxx.com"
     },
     "main": "./index.js",
+    "bin": {
+        "sailthru-cli": "./bin/sailthru-cli"
+    },
     "git": {
         "type": "git",
         "url": "git@github.com:infynyxx/sailthru-cli.git"
