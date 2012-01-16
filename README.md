@@ -46,5 +46,5 @@ JSON Payload
 
 Screenshot
 ----------
-![Screenshot](https://img.skitch.com/20120116-gwy2wcn8ug364khfy6c388cc21.png)
+![Screenshot](https://img.skitch.com/20120116-mu93g9m97hbdj7bb43b65jb2d8.png)
 
