@@ -20,6 +20,10 @@
         "colors": ">=0.6.0-1",
         "sailthru-client": ">=1.0.4"
     },
+    "devDependencies": {
+        "nodeunit",
+        "coffee-script"
+    },
     "engines": {
         "node": ">=0.4"
     }
