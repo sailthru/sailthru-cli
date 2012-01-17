@@ -1,17 +1,24 @@
 readline = require 'readline'
 {createSailthruClient} = require 'sailthru-client'
-{log} = require './util'
 colors = require 'colors'
+
+{log} = require './util'
+
+DEFAULT_URL = 'https://api.sailthru.com'
+
+apiClient = (apiKey, apiSecret, apiUrl) ->
+    client = createSailthruClient(apiKey, apiSecret, apiUrl)
+    client.disableLogging()
+    client
 
 class SailthruConsole
     constructor: (options) ->
         _apiKey = if options.apiKey then options.apiKey else ""
         _apiSecret = if options.apiSecret then options.apiSecret else ""
-        _apiUrl = if options.apiUrl then options.apiUrl else "https://api.sailthru.com"
-        @client = createSailthruClient(_apiKey, _apiSecret, _apiUrl)
-        @client.disableLogging()
-        @welcomeMessage = "***Welcome to CLI for Sailthru API***"
-        @prefix = if options.prefix then options.prefix else "SAILTHRU>"
+        _apiUrl = if options.apiUrl then options.apiUrl else DEFAULT_URL
+        @client = apiClient(_apiKey, _apiSecret, _apiUrl)
+        @welcomeMessage = "***Welcome to CLI for Sailthru API***".cyan
+        @prefix = if options.prefix then options.prefix else "SAILTHRU> "
 
     initialize: ->
         self = this
@@ -42,7 +49,9 @@ class SailthruConsole
         wait = true
 
         switch cmd
-            when 'help' then @helpMessage()
+            when 'help'
+                @helpMessage()
+                wait = false
             when 'quit', 'exit'
                 log 'Bye\n'
                 process.exit(0)
@@ -65,7 +74,11 @@ class SailthruConsole
         return payload.trim()
 
     helpMessage: ->
-        log 'Nothing for now. But I will add soon'
+        sampleCommandText = 'Sample Command: '.grey
+        sampleCommandCmd = sampleCommandText + 'GET'.underline.green + ' ' + 'email'.underline.blue + ' ' + '{"email": "praj@infynyxx.com"}\n'.underline.magenta
+        samplecCommandExplanation = "The above command is divided into 3 parts: HTTP Verb, name of API call and JSON payload to make request. JSON payload requires valid JSON format as defined by http://www.json.org/ \n".cyan
+        otherCommands = "Other Commands: ".cyan + "help | exit | version | history (will be added soon)".blue
+        log sampleCommandCmd + samplecCommandExplanation + otherCommands
         return
 
     _apiRequest: (verb, action, payload, callback) ->
