@@ -23,6 +23,7 @@ exports.main = ->
     
     options.apiKey = commander.key if commander.key
     options.apiSecret = commander.secret if commander.secret
+    options.apiUrl = commander.url if commander.url
 
     #console.log options
     
