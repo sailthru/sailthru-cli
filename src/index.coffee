@@ -2,7 +2,7 @@ commander = require 'commander'
 {createSailthruConsole} = require './sailthru-console'
 {parseConfigFile} = require './util'
 
-VERSION = '0.0.3'
+VERSION = '0.0.4'
 
 exports.VERSION = VERSION
 
