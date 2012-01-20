@@ -21,8 +21,8 @@
         "sailthru-client": ">=1.0.4"
     },
     "devDependencies": {
-        "nodeunit",
-        "coffee-script"
+        "nodeunit": ">=0.6.4",
+        "coffee-script": ">=1.1.2"
     },
     "engines": {
         "node": ">=0.4"
