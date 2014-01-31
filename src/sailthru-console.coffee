@@ -41,6 +41,11 @@ class SailthruConsole
 
     parseCommand: (cmd, callback) ->
         cmd = cmd.trim()
+        
+        if cmd.length == 0
+            @prompt()
+            return
+
         splits = cmd.split(" ")
         verb = splits[0]
         apiCall = if splits[1] then splits[1] else ""
